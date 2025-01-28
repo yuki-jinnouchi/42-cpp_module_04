@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 21:39:10 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:25:10 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:49:33 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 // Orthodox Canonical Form
-Dog::Dog(){
+Dog::Dog()
+  : Animal("Dog") {
   std::cout << "Dog default constructor called." << std::endl;
   this->setType("Dog");
 }
@@ -31,13 +32,13 @@ Dog::Dog(const Dog &src)
   *this = src;
 }
 
-Dog &Dog::operator=(const Dog &lhs) {
+Dog &Dog::operator=(const Dog &rhs) {
   std::cout \
     << "Dog assignment operator " \
-    << "from " << lhs.getType() \
+    << "from " << rhs.getType() \
     << " called." << std::endl;
-  if (this != &lhs)
-    this->setType(lhs.getType());
+  if (this != &rhs)
+    this->setType(rhs.getType());
   return *this;
 }
 

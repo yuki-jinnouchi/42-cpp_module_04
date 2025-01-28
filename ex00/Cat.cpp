@@ -6,16 +6,16 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 21:37:33 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:25:17 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:48:49 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 // Orthodox Canonical Form
-Cat::Cat(){
+Cat::Cat()
+  : Animal("Cat") {
   std::cout << "Cat default constructor called." << std::endl;
-  this->setType("Cat");
 }
 
 Cat::~Cat() {
@@ -31,13 +31,13 @@ Cat::Cat(const Cat &src)
   *this = src;
 }
 
-Cat &Cat::operator=(const Cat &lhs) {
+Cat &Cat::operator=(const Cat &rhs) {
   std::cout \
     << "Cat assignment operator " \
-    << "from " << lhs.getType() \
+    << "from " << rhs.getType() \
     << " called." << std::endl;
-  if (this != &lhs)
-    this->setType(lhs.getType());
+  if (this != &rhs)
+    this->setType(rhs.getType());
   return *this;
 }
 

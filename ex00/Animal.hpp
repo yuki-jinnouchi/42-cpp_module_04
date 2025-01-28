@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 21:38:06 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:34:13 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:48:03 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class Animal{
     Animal();
     virtual ~Animal();
     Animal(const Animal &src);
-    Animal &operator=(const Animal &lhs);
+    Animal &operator=(const Animal &rhs);
+
+    // Optional Constructor
+    Animal(const std::string newType);
 
     // Getters and Setters
     std::string getType(void) const;

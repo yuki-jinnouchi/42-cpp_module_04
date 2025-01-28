@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 22:28:44 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:33:28 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:52:17 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,20 @@ WrongAnimal::WrongAnimal(const WrongAnimal &src) {
   *this = src;
 }
 
-WrongAnimal &WrongAnimal::operator=(const WrongAnimal &lhs) {
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs) {
   std::cout \
     << "WrongAnimal assignment operator " \
-    << "from " << lhs.getType() \
+    << "from " << rhs.getType() \
     << " called." << std::endl;
-  if (this != &lhs)
-    this->type = lhs.type;
+  if (this != &rhs)
+    this->type = rhs.type;
   return *this;
+}
+
+// Optional Constructor
+WrongAnimal::WrongAnimal(const std::string newType)
+  : type(newType) {
+    std::cout << "WrongAnimal constructor called." << std::endl;
 }
 
 // Getters and Setters

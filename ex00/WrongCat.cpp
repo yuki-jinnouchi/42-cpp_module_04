@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 22:29:50 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:28:51 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:51:19 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <string>
 
 // Orthodox Canonical Form
-WrongCat::WrongCat(){
+WrongCat::WrongCat()
+  : WrongAnimal("WrongCat") {
   std::cout << "WrongCat default constructor called." << std::endl;
-  this->setType("WrongCat");
 }
 
 WrongCat::~WrongCat() {
@@ -33,13 +33,13 @@ WrongCat::WrongCat(const WrongCat &src)
   *this = src;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &lhs) {
+WrongCat &WrongCat::operator=(const WrongCat &rhs) {
   std::cout \
     << "WrongCat assignment operator " \
-    << "from " << lhs.getType() \
+    << "from " << rhs.getType() \
     << " called." << std::endl;
-  if (this != &lhs)
-    this->setType(lhs.getType());
+  if (this != &rhs)
+    this->setType(rhs.getType());
   return *this;
 }
 

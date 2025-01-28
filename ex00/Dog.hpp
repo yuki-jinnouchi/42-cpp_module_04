@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 21:37:41 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:31:36 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:37:30 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal{
     Dog();
     ~Dog();
     Dog(const Dog &src);
-    Dog &operator=(const Dog &lhs);
+    Dog &operator=(const Dog &rhs);
 
     // Member functions
     void makeSound(void) const;

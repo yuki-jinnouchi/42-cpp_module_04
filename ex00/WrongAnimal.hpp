@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 22:28:54 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/27 17:33:38 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:50:18 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class WrongAnimal{
     WrongAnimal();
     ~WrongAnimal();
     WrongAnimal(const WrongAnimal &src);
-    WrongAnimal &operator=(const WrongAnimal &lhs);
+    WrongAnimal &operator=(const WrongAnimal &rhs);
+
+    // Optional Constructor
+    WrongAnimal(const std::string newType);
 
     // Getters and Setters
     std::string getType(void) const;
