@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 22:29:50 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/01/28 23:02:08 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/01/28 23:28:06 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ WrongCat &WrongCat::operator=(const WrongCat &rhs) {
     << "WrongCat assignment operator " \
     << "from " << rhs.type \
     << " called." << std::endl;
-  if (this != &rhs)
-    this->type = rhs.type;
+  if (this == &rhs)
+    return *this;
+  this->type = rhs.type;
   return *this;
 }
 
